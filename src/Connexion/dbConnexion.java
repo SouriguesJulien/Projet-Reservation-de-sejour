@@ -9,10 +9,10 @@ import java.util.logging.Logger;
 public class dbConnexion {
     public static Connection Connect() {
         try {
-            String url = "jdbc:mysql://localhost:3306/Sejours";
+            String url = "jdbc:mysql://localhost:3306/sejours";
 
             String user ="phpmyadmin";
-            String password ="Edissyum1998";
+            String password ="84VNNysXkL9QQI7g";
 
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, user, password);

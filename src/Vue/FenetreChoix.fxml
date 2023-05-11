@@ -5,15 +5,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="269.0" prefWidth="517.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="application.ChoixController">
+<AnchorPane prefHeight="740.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ChoixController">
     <children>
-        <Label layoutX="157.0" layoutY="57.0" prefHeight="60.0" prefWidth="203.0" text="Faites votre choix">
+        <Label alignment="CENTER" layoutX="450.0" layoutY="94.0" prefHeight="60.0" prefWidth="371.0" text="Faites votre choix" textAlignment="CENTER">
             <font>
-                <Font name="System Bold" size="18.0" />
+                <Font name="System Bold" size="33.0" />
             </font>
         </Label>
-        <Button layoutX="111.0" layoutY="135.0" mnemonicParsing="false" onAction="#VoirProfil" text="Voir profil ?" />
-        <Button layoutX="287.0" layoutY="135.0" mnemonicParsing="false" onAction="#VoirSejours" text="Voir Liste séjours ?" />
+        <Button layoutX="380.0" layoutY="332.0" mnemonicParsing="false" onAction="#VoirProfil" text="Voir profil ?">
+            <font>
+                <Font size="24.0" />
+            </font></Button>
+        <Button layoutX="676.0" layoutY="334.0" mnemonicParsing="false" onAction="#VoirSejours" text="Voir Liste séjours ?">
+            <font>
+                <Font size="23.0" />
+            </font></Button>
     </children>
 </AnchorPane>

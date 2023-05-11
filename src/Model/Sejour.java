@@ -1,61 +1,71 @@
 package Model;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Sejour {
-    private String Hote ;
-    private String NbrPersonnesRecherchees ;
-    private String NbrJours ;
-    private String Restauration ;
-    private String Competances ;
-    private String Dates ;
+    public StringProperty HoteColumn  ;
+    public IntegerProperty  NbrPersonnesRechercheesColumn = new SimpleIntegerProperty();
+    public IntegerProperty NbrJoursColumn  = new SimpleIntegerProperty();
+    public StringProperty RestaurationColumn ;
+    public StringProperty CompetancesColumn;
+    public StringProperty DatesColumn;
 
     public Sejour() {
         super();
     }
-    public Sejour(String Hote, String NbrPersonnesRecherchees, String NbrJours, String Restauration, String Competances, String Dates)
+    public Sejour(String Hote, int NbrPersonnesRecherchees, int NbrJours, String Restauration, String Competances, String Dates)
     {
-        this.Hote = Hote;
-        this.NbrPersonnesRecherchees = NbrPersonnesRecherchees ;
-        this.NbrJours = NbrJours ;
-        this.Restauration = Restauration ;
-        this.Competances = Competances ;
-        this.Dates = Dates ;
+        this.HoteColumn = new SimpleStringProperty(Hote) ;
+        this.NbrPersonnesRechercheesColumn = new SimpleIntegerProperty(NbrPersonnesRecherchees)  ;
+        this.NbrJoursColumn = new SimpleIntegerProperty(NbrJours);
+        this.RestaurationColumn =  new SimpleStringProperty(Restauration);
+        this.CompetancesColumn = new SimpleStringProperty(Competances) ;
+        this.DatesColumn = new SimpleStringProperty(Dates) ;
 
     }
-    public String getHote() {
-        return Hote;
+
+
+    public final StringProperty HoteColumnProperty() {
+        return this.HoteColumn ;
     }
-    public void setHote(String hote) {
-        Hote = hote;
+    public final IntegerProperty NbrPersonnesRechercheesColumnProperty() {
+        return this.NbrPersonnesRechercheesColumn ;
     }
-    public String getNbrPersonnesRecherchees() {
-        return NbrPersonnesRecherchees;
+    public final IntegerProperty NbrJoursColumnProperty() {
+        return this.NbrJoursColumn ;
     }
-    public void setNbrPersonnesRecherchees(String nbrPersonnesRecherchees) {
-        NbrPersonnesRecherchees = nbrPersonnesRecherchees;
+    public final StringProperty RestaurationColumnProperty() {
+        return this.RestaurationColumn ;
     }
-    public String getNbrJours() {
-        return NbrJours;
+    public final StringProperty CompetancesColumnProperty() {
+        return this.CompetancesColumn ;
     }
-    public void setNbrJours(String nbrJours) {
-        NbrJours = nbrJours;
+    public final StringProperty DatesColumnProperty() {
+        return this.DatesColumn ;
     }
-    public String getRestauration() {
-        return Restauration;
+
+    public final String getHote() {
+
+        return HoteColumn.get();
     }
-    public void setRestauration(String restauration) {
-        Restauration = restauration;
+    public final Integer getNbrPersonnesRecherchees(){
+
+        return NbrPersonnesRechercheesColumn.get();
     }
-    public String getCompetances() {
-        return Competances;
+    public final Integer getNbrJours() {
+
+        return NbrJoursColumn.get();
     }
-    public void setCompetances(String competances) {
-        Competances = competances;
+    public final String getRestauration() {
+
+        return RestaurationColumn.get();
     }
-    public String getDates() {
-        return Dates;
-    }
-    public void setDates(String dates) {
-        Dates = dates;
+    public final String getDates() {
+
+        return DatesColumn.get();
     }
 
 

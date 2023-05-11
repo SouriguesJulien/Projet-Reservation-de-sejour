@@ -15,10 +15,9 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1220.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ProfilController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ProfilController">
     <left>
-        <VBox prefHeight="200.0" prefWidth="340.0" styleClass="primary-color" stylesheets="@../application/application.css" BorderPane.alignment="CENTER">
+        <VBox prefHeight="200.0" prefWidth="340.0" styleClass="primary-color" stylesheets="@application.css" BorderPane.alignment="CENTER">
             <children>
                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
                     <opaqueInsets>
@@ -30,7 +29,7 @@
                                 <Image url="@../../../../../../../../Téléchargements/imageprofil.jpeg" />
                             </image>
                         </ImageView>
-                        <Label text="Bouchra EL">
+                        <Label text="MEGHELLET Essaid">
                             <font>
                                 <Font name="System Bold" size="22.0" />
                             </font>
@@ -51,7 +50,7 @@
                                 </LinearGradient>
                             </textFill>
                         </Label>
-                        <Button fx:id="ChangerPhoto" mnemonicParsing="false" onAction="#chooseImageButtonPushed" prefHeight="30.0" prefWidth="110.0" styleClass="b" stylesheets="@../application/application.css" text="Changer Photo" textFill="#fafafa">
+                        <Button fx:id="ChangerPhoto" mnemonicParsing="false" onAction="#chooseImageButtonPushed" prefHeight="30.0" prefWidth="110.0" styleClass="b" stylesheets="@application.css" text="Changer Photo" textFill="#fafafa">
                             <font>
                                 <Font name="System Bold" size="10.0" />
                             </font>
@@ -60,7 +59,7 @@
                 </VBox>
                 <VBox alignment="BOTTOM_CENTER" prefHeight="361.0" prefWidth="340.0" spacing="30.0">
                     <children>
-                        <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0" styleClass="selected-border" stylesheets="@../application/application.css">
+                        <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0" styleClass="selected-border" stylesheets="@application.css">
                             <children>
                                 <ImageView fitHeight="35.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -151,9 +150,9 @@
         </VBox>
     </left>
     <center>
-        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="secondary-color" stylesheets="@../application/application.css" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="secondary-color" stylesheets="@application.css" BorderPane.alignment="CENTER">
             <children>
-                <Label prefHeight="18.0" prefWidth="706.0" stylesheets="@../application/application.css" text="Configurations Profil" textFill="WHITE">
+                <Label prefHeight="18.0" prefWidth="706.0" stylesheets="@application.css" text="Configurations Profil" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="30.0" />
                     </font>
@@ -166,14 +165,14 @@
                         <Insets bottom="30.0" left="50.0" right="50.0" top="30.0" />
                     </VBox.margin>
                     <children>
-                        <Label prefHeight="18.0" prefWidth="706.0" stylesheets="@../application/application.css" text="Details Profil" textFill="WHITE">
+                        <Label prefHeight="18.0" prefWidth="706.0" stylesheets="@application.css" text="Details Profil" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="23.0" />
                             </font>
                         </Label>
                         <HBox prefHeight="45.0" prefWidth="780.0">
                             <children>
-                                <Label prefHeight="51.0" prefWidth="77.0" stylesheets="@../application/application.css" text="Nom :" textFill="WHITE">
+                                <Label prefHeight="51.0" prefWidth="77.0" stylesheets="@application.css" text="Nom :" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="17.0" />
                                     </font>
@@ -187,7 +186,7 @@
                         </HBox>
                         <HBox layoutX="10.0" layoutY="39.0" prefHeight="45.0" prefWidth="780.0">
                             <children>
-                                <Label prefHeight="45.0" prefWidth="94.0" stylesheets="@../application/application.css" text="Prenom :" textFill="WHITE">
+                                <Label prefHeight="45.0" prefWidth="94.0" stylesheets="@application.css" text="Prenom :" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="17.0" />
                                     </font>
@@ -201,7 +200,7 @@
                         </HBox>
                         <HBox layoutX="10.0" layoutY="84.0" prefHeight="45.0" prefWidth="780.0">
                             <children>
-                                <Label prefHeight="45.0" prefWidth="193.0" stylesheets="@../application/application.css" text="date de naissance" textFill="WHITE">
+                                <Label prefHeight="45.0" prefWidth="193.0" stylesheets="@application.css" text="date de naissance" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="17.0" />
                                     </font>
@@ -217,14 +216,14 @@
                 </VBox>
                 <VBox layoutX="60.0" layoutY="136.0" prefHeight="200.0" prefWidth="100.0">
                     <children>
-                        <Label prefHeight="18.0" prefWidth="706.0" stylesheets="@../application/application.css" text="Infos Contact" textFill="WHITE">
+                        <Label prefHeight="18.0" prefWidth="706.0" stylesheets="@application.css" text="Infos Contact" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="23.0" />
                             </font>
                         </Label>
                         <HBox prefHeight="45.0" prefWidth="780.0">
                             <children>
-                                <Label prefHeight="51.0" prefWidth="77.0" stylesheets="@../application/application.css" text="Email :" textFill="WHITE">
+                                <Label prefHeight="51.0" prefWidth="77.0" stylesheets="@application.css" text="Email :" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="17.0" />
                                     </font>
@@ -238,7 +237,7 @@
                         </HBox>
                         <HBox layoutX="10.0" layoutY="39.0" prefHeight="45.0" prefWidth="780.0">
                             <children>
-                                <Label prefHeight="45.0" prefWidth="94.0" stylesheets="@../application/application.css" text="Num Tel :" textFill="WHITE">
+                                <Label prefHeight="45.0" prefWidth="94.0" stylesheets="@application.css" text="Num Tel :" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="17.0" />
                                     </font>
@@ -252,7 +251,7 @@
                         </HBox>
                         <HBox layoutX="10.0" layoutY="84.0" prefHeight="45.0" prefWidth="780.0">
                             <children>
-                                <Label prefHeight="45.0" prefWidth="193.0" stylesheets="@../application/application.css" text="Adresse :" textFill="WHITE">
+                                <Label prefHeight="45.0" prefWidth="193.0" stylesheets="@application.css" text="Adresse :" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="17.0" />
                                     </font>
@@ -269,11 +268,20 @@
                         <Insets bottom="30.0" left="50.0" right="50.0" top="30.0" />
                     </VBox.margin>
                 </VBox>
-                <Button fx:id="EnregistrerModifs" mnemonicParsing="false" onAction="#ActionEnregistrerModifs" prefHeight="50.0" prefWidth="250.0" styleClass="b" stylesheets="@../application/application.css" text="Enregitrer Modification" textFill="#fafafa">
-                    <font>
-                        <Font name="System Bold" size="10.0" />
-                    </font>
-                </Button>
+                <Pane prefHeight="45.0" prefWidth="496.0">
+                    <children>
+                        <Button fx:id="EnregistrerModifs" layoutX="482.0" layoutY="1.0" mnemonicParsing="false" onAction="#ActionEnregistrerModifs" prefHeight="50.0" prefWidth="200.0" styleClass="b" stylesheets="@application.css" text="Enregitrer Modification" textFill="#fafafa">
+                            <font>
+                                <Font name="System Bold" size="10.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="btnRetour" layoutX="225.0" layoutY="-3.0" mnemonicParsing="false" onAction="#ActionRetourVuePrecedente" prefHeight="50.0" prefWidth="200.0" styleClass="b" stylesheets="@application.css" text="Retour" textFill="#fafafa">
+                            <font>
+                                <Font name="System Bold" size="10.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </Pane>
             </children>
         </VBox>
     </center>
