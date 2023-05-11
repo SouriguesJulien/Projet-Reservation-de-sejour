@@ -30,7 +30,7 @@
                                 <Image url="@../../../../../../../../Téléchargements/imageprofil.jpeg" />
                             </image>
                         </ImageView>
-                        <Label text="MEGHELLET Essaid">
+                        <Label text="Bouchra EL">
                             <font>
                                 <Font name="System Bold" size="22.0" />
                             </font>
@@ -62,7 +62,11 @@
                     <children>
                         <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0" styleClass="selected-border" stylesheets="@application.css">
                             <children>
-
+                                <ImageView fitHeight="35.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../icons/Profile-50-100px/icons8-profile-100.png" />
+                                    </image>
+                                </ImageView>
                                 <Label prefHeight="34.0" prefWidth="218.0" text="Profil" textFill="#fff7f7">
                                     <font>
                                         <Font size="20.0" />
@@ -75,7 +79,11 @@
                         </HBox>
                         <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="45.0" prefWidth="200.0" styleClass="selected">
                             <children>
-
+                                <ImageView fitHeight="35.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../icons/Notification-80-100px/icons8-notification-100.png" />
+                                    </image>
+                                </ImageView>
                                 <Label prefHeight="34.0" prefWidth="217.0" text="Notifications" textFill="#fff7f7">
                                     <font>
                                         <Font size="20.0" />
@@ -88,7 +96,11 @@
                         </HBox>
                         <HBox alignment="CENTER" layoutX="10.0" layoutY="55.0" prefHeight="45.0" prefWidth="200.0" styleClass="selected">
                             <children>
-
+                                <ImageView fitHeight="35.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../icons/Show%20Password-64-100px/icons8-show-password-100.png" />
+                                    </image>
+                                </ImageView>
                                 <Label prefHeight="34.0" prefWidth="219.0" text="Mot de passe" textFill="#fff7f7">
                                     <font>
                                         <Font size="20.0" />
@@ -101,7 +113,11 @@
                         </HBox>
                         <HBox alignment="CENTER" layoutX="10.0" layoutY="100.0" prefHeight="45.0" prefWidth="200.0" styleClass="selected">
                             <children>
-
+                                <ImageView fitHeight="35.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../icons/User%20Settings-32-100px/icons8-user-settings-100.png" />
+                                    </image>
+                                </ImageView>
                                 <Label prefHeight="34.0" prefWidth="221.0" text="Configurations" textFill="#fff7f7">
                                     <font>
                                         <Font size="20.0" />
@@ -114,7 +130,11 @@
                         </HBox>
                         <HBox alignment="CENTER" layoutX="10.0" layoutY="145.0" prefHeight="45.0" prefWidth="200.0" styleClass="selected">
                             <children>
-
+                                <ImageView fitHeight="35.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../icons/Privacy-64-100px/icons8-privacy-100.png" />
+                                    </image>
+                                </ImageView>
                                 <Label prefHeight="34.0" prefWidth="220.0" text="politique vie privée" textFill="#fff7f7">
                                     <font>
                                         <Font size="20.0" />
