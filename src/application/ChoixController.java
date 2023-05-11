@@ -12,7 +12,7 @@ public class ChoixController {
     void VoirProfil(ActionEvent event) {
 
         try {
-            Parent root  = FXMLLoader.load(getClass().getResource("/application/Profil.fxml"));
+            Parent root  = FXMLLoader.load(getClass().getResource("/Vue/Profil.fxml"));
             Scene scene = new Scene(root,1220,740);
             scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
             Stage stage = new Stage();
@@ -29,7 +29,7 @@ public class ChoixController {
     @FXML
     void VoirSejours(ActionEvent event) {
         try {
-            Parent root  = FXMLLoader.load(getClass().getResource("/application/Sejours.fxml"));
+            Parent root  = FXMLLoader.load(getClass().getResource("/Vue/Sejours.fxml"));
             Scene scene = new Scene(root,1220,740);
             scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
             Stage stage = new Stage();
