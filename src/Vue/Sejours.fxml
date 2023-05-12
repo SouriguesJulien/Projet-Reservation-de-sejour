@@ -8,15 +8,15 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="740.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SejourController">
+<AnchorPane prefHeight="740.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SejoursController">
     <children>
         <TableView fx:id="table" layoutX="13.0" layoutY="81.0" prefHeight="564.0" prefWidth="1072.0" styleClass="table-column" stylesheets="@../application/application.css">
             <columns>
                 <TableColumn fx:id="HoteColumn" prefWidth="75.0" styleClass="ali" text="Hôte" />
                 <TableColumn fx:id="NbrPersonnesRechercheesColumn" prefWidth="201.0" text="Personnes Recherchées" />
                 <TableColumn fx:id="NbrJoursColumn" prefWidth="137.0" styleClass="ali" text="Nombre de jours" />
-                <TableColumn fx:id="RestaurationColumn" prefWidth="200.0" styleClass="ali" text="Restauration" />
-                <TableColumn fx:id="CompetancesColumn" prefWidth="226.0" styleClass="-fx-alignment: center-right;" text="Compétance(s)" />
+                <TableColumn fx:id="PrixColumn" prefWidth="200.0" styleClass="ali" text="Prix" />
+                <TableColumn fx:id="CompetancesColumn" prefWidth="226.0" styleClass="-fx-alignment: center-right;" text="Titre" />
                 <TableColumn fx:id="DatesColumn" prefWidth="232.0" style="-fx-alignment: CENTER;" text="Dates" />
             </columns>
         </TableView>
@@ -39,9 +39,11 @@
                         <Font name="System Bold" size="18.0" />
                     </font></Button>
                 <TextField layoutX="11.0" layoutY="21.0" promptText="Nom du Hôte ?" style="-fx-background-color: #000000;" />
-                <TextField layoutX="195.0" layoutY="21.0" promptText="Compétence ?" style="-fx-background-color: #000000;" styleClass="text-input" />
+                <TextField layoutX="195.0" layoutY="21.0" promptText="Lieu" style="-fx-background-color: #000000;" styleClass="text-input" />
                 <TextField layoutX="372.0" layoutY="22.0" promptText="Nombre de personnes?" style="-fx-background-color: #000000;" styleClass="text-input" />
                 <TextField layoutX="548.0" layoutY="22.0" promptText="Nombre de jour(s)?" style="-fx-background-color: #000000;" />
+                <TextField layoutX="548.0" layoutY="22.0" promptText="Prix" style="-fx-background-color: #000000;" />
+
             </children>
         </Pane>
     </children>

@@ -59,7 +59,7 @@ public class SejoursController implements Initializable {
     private TableColumn<Sejour, IntegerProperty> NbrPersonnesRechercheesColumn;
 
     @FXML
-    private TableColumn<Sejour, StringProperty> RestaurationColumn;
+    private TableColumn<Sejour, StringProperty> PrixColumn;
 
 
 
@@ -92,7 +92,7 @@ public class SejoursController implements Initializable {
             NbrPersonnesRechercheesColumn.setCellValueFactory(new PropertyValueFactory<Sejour, IntegerProperty>("NbrPersonnesRechercheesColumn"));
             NbrJoursColumn.setCellValueFactory(new PropertyValueFactory<Sejour, IntegerProperty>("NbrJoursColumn"));
             CompetancesColumn.setCellValueFactory(new PropertyValueFactory<Sejour,StringProperty>("CompetancesColumn"));
-            RestaurationColumn.setCellValueFactory(new PropertyValueFactory<Sejour,StringProperty>("RestaurationColumn"));
+            PrixColumn.setCellValueFactory(new PropertyValueFactory<Sejour,StringProperty>("PrixColumn"));
             DatesColumn.setCellValueFactory(new PropertyValueFactory<Sejour,StringProperty>("DatesColumn"));
 
 
