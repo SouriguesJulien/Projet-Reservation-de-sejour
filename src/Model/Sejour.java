@@ -9,7 +9,7 @@ public class Sejour {
     public StringProperty HoteColumn  ;
     public IntegerProperty  NbrPersonnesRechercheesColumn = new SimpleIntegerProperty();
     public IntegerProperty NbrJoursColumn  = new SimpleIntegerProperty();
-    public StringProperty PrixColumn ;
+    public StringProperty RestaurationColumn ;
     public StringProperty CompetancesColumn;
     public StringProperty DatesColumn;
 
@@ -21,7 +21,7 @@ public class Sejour {
         this.HoteColumn = new SimpleStringProperty(Hote) ;
         this.NbrPersonnesRechercheesColumn = new SimpleIntegerProperty(NbrPersonnesRecherchees)  ;
         this.NbrJoursColumn = new SimpleIntegerProperty(NbrJours);
-        this.PrixColumn =  new SimpleStringProperty(Restauration);
+        this.RestaurationColumn =  new SimpleStringProperty(Restauration);
         this.CompetancesColumn = new SimpleStringProperty(Competances) ;
         this.DatesColumn = new SimpleStringProperty(Dates) ;
 
@@ -37,8 +37,8 @@ public class Sejour {
     public final IntegerProperty NbrJoursColumnProperty() {
         return this.NbrJoursColumn ;
     }
-    public final StringProperty PrixColumnProperty() {
-        return this.PrixColumn ;
+    public final StringProperty RestaurationColumnProperty() {
+        return this.RestaurationColumn ;
     }
     public final StringProperty CompetancesColumnProperty() {
         return this.CompetancesColumn ;
@@ -61,7 +61,7 @@ public class Sejour {
     }
     public final String getRestauration() {
 
-        return PrixColumn.get();
+        return RestaurationColumn.get();
     }
     public final String getDates() {
 

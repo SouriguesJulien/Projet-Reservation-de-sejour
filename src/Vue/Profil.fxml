@@ -25,7 +25,9 @@
                     </opaqueInsets>
                     <children>
                         <ImageView fx:id="Photo" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-
+                            <image>
+                                <Image url="@../../../../../../../../Téléchargements/imageprofil.jpeg" />
+                            </image>
                         </ImageView>
                         <Label text="MEGHELLET Essaid">
                             <font>
