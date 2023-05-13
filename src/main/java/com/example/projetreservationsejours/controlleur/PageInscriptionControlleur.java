@@ -1,21 +1,27 @@
 package com.example.projetreservationsejours.controlleur;
-
 import com.example.projetreservationsejours.Application;
 import com.example.projetreservationsejours.modele.User;
+import javafx.application.Platform;
 import javafx.application.Preloader;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 
@@ -73,14 +79,19 @@ public class PageInscriptionControlleur extends Preloader implements Initializab
 
     private User user = new User();
 
+    public void setButton(Button button) {
+            button.setBackground(new Background(new BackgroundFill(Color.WHEAT, null, null)));
+            button.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+    }
+
     @FXML
     void checkHote(ActionEvent event) {
-
+        checkboxVoyageur.setDisable(checkboxHote.isSelected());
     }
 
     @FXML
     void checkVoyageur(ActionEvent event) {
-
+        checkboxHote.setDisable(checkboxVoyageur.isSelected());
     }
 
     Boolean verifyTextFieldEmpty(TextField textfield,Text text, String error,Boolean isValid){
@@ -138,14 +149,27 @@ public class PageInscriptionControlleur extends Preloader implements Initializab
         }
         if(isValid){
             for(int i=0; i<application.allUsers.getUsers().size() && isValid; i++){
-               if(application.modele.allUsers.getUsers().get(i).getUsername().equals(nomUtilisateur.getText()) || application.allUsers.getUsers().get(i).getEmail().equals(email.getText())){
+               if(application.allUsers.getUsers().get(i).getUsername().equals(nomUtilisateur.getText()) || application.allUsers.getUsers().get(i).getEmail().equals(email.getText())){
                    erreurCheckboxTermes.setText("Cet utilisateur existe déjà ! ");
                    isValid= false;
                }
             }
         }
         if(isValid){
-
+            user.setId(application.allUsers.getUsers().size()+1);
+            user.setPrenom(prenom.getText());
+            user.setNom(nom.getText());
+            user.setUsername(nomUtilisateur.getText());
+            user.setEmail(email.getText());
+            user.setPassword(motDePasse.getText());
+            user.setVoyageur(checkboxVoyageur.isSelected());
+            user.setHote(checkboxHote.isSelected());
+            application.allUsers.addNewUserToCsv("utilisateurs.csv",user);
+            application.fenetreControlleur.showNotification("Connexion","Votre inscription a été validé",2000,"images/Right.png");
+            application.userConnected = user;
+            System.out.println("Inscription" + application.userConnected.toString());
+            Stage stage = (Stage) pageInscriptionStage.getScene().getWindow();
+            stage.close();
         }
 
     }
@@ -157,12 +181,6 @@ public class PageInscriptionControlleur extends Preloader implements Initializab
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        prenom.setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #D3D3D3");
-        nom.setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #D3D3D3");
-        nomUtilisateur.setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #D3D3D3");
-        email.setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #D3D3D3");
-        motDePasse.setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #D3D3D3");
-        pageInscriptionStage.setStyle("-fx-background-color: #FFFFFF;");
-        boutonInscrire.setStyle("-fx-background-color: #0D5180; -fx-text-fill:#FFFFFF; -fx-border-radius: 30;-fx-background-radius: 30;-fx-border-color: #FFFFFF; -fx-arc-width: 30");
+
     }
 }

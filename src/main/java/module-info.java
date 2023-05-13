@@ -1,7 +1,7 @@
 module com.example.projetreservationsejours {
     requires javafx.controls;
     requires javafx.fxml;
-    requires javafx.web;
+    //requires javafx.web;
     requires javafx.graphics;
     requires org.controlsfx.controls;
 
