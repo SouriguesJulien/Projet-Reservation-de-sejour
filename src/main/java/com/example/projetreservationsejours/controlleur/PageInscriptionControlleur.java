@@ -138,7 +138,7 @@ public class PageInscriptionControlleur extends Preloader implements Initializab
         }
         if(isValid){
             for(int i=0; i<application.allUsers.getUsers().size() && isValid; i++){
-               if(application.allUsers.getUsers().get(i).getUsername().equals(nomUtilisateur.getText()) || application.allUsers.getUsers().get(i).getEmail().equals(email.getText())){
+               if(application.modele.allUsers.getUsers().get(i).getUsername().equals(nomUtilisateur.getText()) || application.allUsers.getUsers().get(i).getEmail().equals(email.getText())){
                    erreurCheckboxTermes.setText("Cet utilisateur existe déjà ! ");
                    isValid= false;
                }
