@@ -1,7 +1,6 @@
 package com.example.projetreservationsejours;
 
-import com.example.projetreservationsejours.controlleur.FenetreControlleur;
-import com.example.projetreservationsejours.modele.AllUser;
+import com.example.projetreservationsejours.controlleur.FenetreController;
 import com.example.projetreservationsejours.modele.User;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -12,31 +11,17 @@ import java.io.IOException;
 
 public class Application extends javafx.application.Application {
 
-    public static FenetreControlleur fenetreControlleur = new FenetreControlleur();
-    public static User userConnected;
-
-    public static AllUser allUsers;
 
     @Override
     public void start(Stage stage) throws IOException {
         //Récupère le fxml Accueil
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("Accueil.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Rezerweethus");
-        stage.getIcons().add(new Image(Application.class.getResourceAsStream("images/logo.png")));
+        stage.setTitle("reservation");
         stage.setScene(scene);
         stage.show();
-        //Initialisation de tout les utilisateurs
-        try {
-            allUsers = new AllUser();
-            allUsers.loadData("utilisateurs.csv");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
         //Injecte la vue dans le controlleur de fenetre
-        fenetreControlleur.setStagePrincipale(stage);
-        fenetreControlleur.setScenePrincipale(scene);
+
     }
 
     public static void main(String[] args) {

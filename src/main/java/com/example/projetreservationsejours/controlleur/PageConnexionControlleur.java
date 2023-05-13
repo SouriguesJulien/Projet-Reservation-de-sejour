@@ -1,6 +1,9 @@
 package com.example.projetreservationsejours.controlleur;
 import com.example.projetreservationsejours.Application;
 import com.example.projetreservationsejours.modele.User;
+
+import com.example.projetreservationsejours.controlleur.FenetreController;
+
 import javafx.application.Preloader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -96,9 +99,9 @@ public class PageConnexionControlleur extends Preloader implements Initializable
             for(int i=0; i<application.allUsers.getUsers().size() && !found; i++){
                 if(application.allUsers.getUsers().get(i).getUsername().equals(nomUtilisateur.getText()) && application.allUsers.getUsers().get(i).getPassword().equals(motDePasse.getText())){
                     found=true;
-                    application.fenetreControlleur.showNotification("Connexion","Vous êtes désormais connecté",2000,"images/Right.png");
+                    application.FenetreController.showNotification("Connexion","Vous êtes désormais connecté",2000,"images/Right.png");
                     application.userConnected = application.allUsers.findUserByUsernameAndPassword(nomUtilisateur.getText(), motDePasse.getText());
-                    application.fenetreControlleur.changerDeFenetre("Accueil.fxml");
+                    application.FenetreController.changerDeFenetre("Accueil.fxml");
                     Stage stage = (Stage) pageConnexionStage.getScene().getWindow();
                     stage.close();
                 }
