@@ -1,11 +1,7 @@
 package com.example.projetreservationsejours.controlleur;
 
 import com.example.projetreservationsejours.Application;
-import com.example.projetreservationsejours.CardDetailsControlleur;
 import com.example.projetreservationsejours.modele.Location;
-import com.example.projetreservationsejours.controlleur.FenetreController;
-
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -42,8 +38,8 @@ public class CardTemplateControlleur {
                 CardDetailsControlleur cardDetailsController = fxmlLoader.getController();
                 cardDetailsController.setCard(location);
                 Scene scene = new Scene(root);
-                application.FenetreController.getStagePrincipale().centerOnScreen();
-                application.FenetreController.getStagePrincipale().setScene(scene);
+                application.FenetreControlleur.getStagePrincipale().centerOnScreen();
+                application.FenetreControlleur.getStagePrincipale().setScene(scene);
             } catch (IOException e) {
                 e.printStackTrace();
             }

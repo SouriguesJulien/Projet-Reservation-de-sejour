@@ -1,6 +1,6 @@
 package com.example.projetreservationsejours;
 
-import com.example.projetreservationsejours.controlleur.FenetreController;
+import com.example.projetreservationsejours.controlleur.FenetreControlleur;
 import com.example.projetreservationsejours.modele.User;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

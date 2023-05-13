@@ -166,9 +166,9 @@ public class PageInscriptionControlleur extends Preloader implements Initializab
             user.setHote(checkboxHote.isSelected());
             application.allUsers.addNewUserToCsv("utilisateurs.csv",user);
             application.allUsers.loadData("utilisateurs.csv");
-            application.FenetreController.showNotification("Connexion","Votre inscription a été validé",2000,"images/Right.png");
+            application.FenetreControlleur.showNotification("Connexion","Votre inscription a été validé",2000,"images/Right.png");
             application.userConnected = application.allUsers.findUserByUsernameAndPassword(user.getUsername(),user.getPassword());
-            application.FenetreController.changerDeFenetre("Accueil.fxml");
+            application.FenetreControlleur.changerDeFenetre("Accueil.fxml");
             System.out.println("Inscription" + application.userConnected.toString());
             Stage stage = (Stage) pageInscriptionStage.getScene().getWindow();
             stage.close();

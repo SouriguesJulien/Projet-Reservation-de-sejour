@@ -25,10 +25,7 @@
                         <Button fx:id="boutonConnexion" layoutX="806.0" layoutY="19.0" mnemonicParsing="false" onAction="#showPageConnexion" text="Se connecter" />
                         <Button fx:id="bountonInscription" layoutX="928.0" layoutY="19.0" mnemonicParsing="false" onAction="#showPageInscription" text="S'inscrire" />
                         <ImageView fitHeight="114.0" fitWidth="274.0" layoutX="441.0" layoutY="-27.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/logo.png" />
-                           </image>
-                        </ImageView>
+
                         <ImageView fx:id="logout" fitHeight="23.0" fitWidth="42.0" layoutX="1005.0" layoutY="20.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/logout.png" />

@@ -1,14 +1,18 @@
-package com.example.projetreservationsejours;
+package com.example.projetreservationsejours.controlleur;
 
 import com.example.projetreservationsejours.Application;
 import com.example.projetreservationsejours.modele.*;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -79,12 +83,14 @@ public class CardDetailsControlleur implements Initializable {
     @FXML
     private Text userName;
 
+    @FXML
+    private TextArea addCommentaire;
+
     private int locationId;
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         changeHeaderVisibility();
-
         if(this.isUserConnected()) {
             userName.setText(application.userConnected.getUsername());
             AllLocationLoue allLocationLoue = new AllLocationLoue();
@@ -114,6 +120,50 @@ public class CardDetailsControlleur implements Initializable {
         lieu.setText(location.getLocation());
         nbMaxPersonne.setText(String.valueOf(location.getNumberOfPeople()));
         hote.setText(users.getUsers().get(Integer.parseInt(location.getHost_user_id())-1).getNom());
+        addCommentaire.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                if (keyEvent.getCode() == KeyCode.ENTER)  {
+                    //Si l'utilisateur n'est pas connecté
+                    if(!isUserConnected()) {
+                        application.FenetreControlleur.showNotification("Alerte","Veuillez vous connecter !",2000,"images/Right.png");
+                    }
+                    //Si l'utilisateur est connecté
+                    else {
+                        String text = addCommentaire.getText();
+                        comments.getChildren().clear();
+
+                        AllCommentaire commentaireByLocationId = new AllCommentaire();
+
+                        try {
+                            commentaireByLocationId.loadData("commentaires.csv");
+                            Commentaire commentaire = new Commentaire(commentaireByLocationId.getCommentaireList().size(),
+                                    location.getId(), application.userConnected.getId(), text);
+                            commentaireByLocationId.getCommentaireList().clear();
+                            commentaireByLocationId.addNewCommentaireToCsv("commentaires.csv", commentaire);
+                            commentaireByLocationId.loadData("commentaires.csv", location.getId());
+                            commentaireByLocationId.displayCommentaireList();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+
+                        for (Commentaire response : commentaireByLocationId.getCommentaireList()) {
+                            try {
+                                FXMLLoader loader = new FXMLLoader(getClass().getResource("CommentaireTemplate.fxml"));
+                                AnchorPane cardNode = loader.load();
+                                CommentaireTemplateControlleur commentaireControlleur = loader.getController();
+                                commentaireControlleur.setCommentaire(users.getUsers().get(Integer.parseInt(String.valueOf(response.getUser_id() - 1))).getUsername(), response);
+                                comments.getChildren().add(cardNode);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        application.FenetreControlleur.showNotification("Commentaire","Votre commentaire est publié !",2000,"images/Right.png");
+                        addCommentaire.setText("");
+                    }
+                }
+            }
+        });
 
         AllCommentaire commentaireByLocationId = new AllCommentaire();
         try {
@@ -141,7 +191,7 @@ public class CardDetailsControlleur implements Initializable {
     @FXML
     void addToCart(MouseEvent event) {
         if(!isUserConnected()) {
-            application.FenetreController.showNotification("Alerte","Veuillez vous connecter !",2000,"images/Right.png");
+            application.FenetreControlleur.showNotification("Alerte","Veuillez vous connecter !",2000,"images/Right.png");
         }
         else {
             try {
@@ -155,13 +205,13 @@ public class CardDetailsControlleur implements Initializable {
                     }
                 }
                 if(isHasAlready) {
-                    application.FenetreController.showNotification("Alerte","Votre demande de location est en cours !",2000,"images/Right.png");
+                    application.FenetreControlleur.showNotification("Alerte","Votre demande de location est en cours !",2000,"images/Right.png");
                 }
                 else {
                     LocationLoue locationLoue = new LocationLoue(allLocationLoue.howManyLocationLoue() + 1, locationId, application.userConnected.getId());
                     allLocationLoue.addNewLocationLoueToCsv("location_loue.csv", locationLoue);
-                    application.FenetreController.showNotification("Alerte", "Location ajoutée au panier !", 2000, "images/Right.png");
-                    application.FenetreController.changerDeFenetre("Accueil.fxml");
+                    application.FenetreControlleur.showNotification("Alerte", "Location ajoutée au panier !", 2000, "images/Right.png");
+                    application.FenetreControlleur.changerDeFenetre("Accueil.fxml");
                 }
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -171,17 +221,17 @@ public class CardDetailsControlleur implements Initializable {
 
     @FXML
     void backHome(MouseEvent event) throws IOException {
-        application.FenetreController.changerDeFenetre("Accueil.fxml");
+        application.FenetreControlleur.changerDeFenetre("Accueil.fxml");
     }
 
     @FXML
     void showPageInscription(ActionEvent event) throws IOException {
-        application.FenetreController.popupFenetre("PageInscription.fxml","S'inscrire");
+        application.FenetreControlleur.popupFenetre("PageInscription.fxml","S'inscrire");
     }
 
     @FXML
     void showPageConnexion(ActionEvent event) throws IOException {
-        application.FenetreController.popupFenetre("PageConnexion.fxml","Se connecter");
+        application.FenetreControlleur.popupFenetre("PageConnexion.fxml","Se connecter");
     }
 
     /**
@@ -192,7 +242,7 @@ public class CardDetailsControlleur implements Initializable {
         application.userConnected = null;
         userName.setText("");
         changeHeaderVisibility();
-        application.FenetreController.showNotification("Deconnexion","Vous êtes désormais déconnecté",2000,"images/Right.png");
+        application.FenetreControlleur.showNotification("Deconnexion","Vous êtes désormais déconnecté",2000,"images/Right.png");
     }
 
     /**

@@ -1,6 +1,11 @@
 package com.example.projetreservationsejours.controlleur;
-
+import com.example.projetreservationsejours.modele.AllUser;
+import com.example.projetreservationsejours.modele.User;
 import com.example.projetreservationsejours.Application;
+
+
+
+
 
 import com.example.projetreservationsejours.modele.AllLocation;
 import com.example.projetreservationsejours.modele.AllLocationLoue;
@@ -156,17 +161,17 @@ public class MainController implements Initializable {
      * */
     @FXML
     void backHome(MouseEvent event) throws IOException {
-        application.FenetreController.changerDeFenetre("Accueil.fxml");
+        application.FenetreControlleur.changerDeFenetre("Accueil.fxml");
     }
 
     @FXML
     void showPageInscription(ActionEvent event) throws IOException {
-        application.FenetreController.popupFenetre("PageInscription.fxml","S'inscrire");
+        application.FenetreControlleur.popupFenetre("PageInscription.fxml","S'inscrire");
     }
 
     @FXML
     void showPageConnexion(ActionEvent event) throws IOException {
-        application.FenetreController.popupFenetre("PageConnexion.fxml","Se connecter");
+        application.FenetreControlleur.popupFenetre("PageConnexion.fxml","Se connecter");
     }
 
     /**
@@ -177,7 +182,7 @@ public class MainController implements Initializable {
         application.userConnected = null;
         userName.setText("");
         changeHeaderVisibility();
-        application.FenetreController.showNotification("Deconnexion","Vous êtes désormais déconnecté",2000,"images/Right.png");
+        application.FenetreControlleur.showNotification("Deconnexion","Vous êtes désormais déconnecté",2000,"images/Right.png");
     }
 
     /**
