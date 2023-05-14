@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="mainPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1536.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetreservationsejours.controlleur.CardDetailsControlleur">
+   <children>
+      <VBox fx:id="vBoxPane" prefHeight="790.0" prefWidth="1536.0">
+         <children>
+            <HBox fx:id="hboxPane" prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <Pane fx:id="headerPane" prefHeight="150.0" prefWidth="1536.0">
+                     <children>
+                        <Button fx:id="boutonConnexion" layoutX="1252.0" layoutY="32.0" mnemonicParsing="false" onAction="#showPageConnexion" prefHeight="53.0" prefWidth="128.0" text="Se connecter">
+                           <font>
+                              <Font name="Perpetua" size="18.0" />
+                           </font></Button>
+                        <Button fx:id="bountonInscription" layoutX="1413.0" layoutY="32.0" mnemonicParsing="false" onAction="#showPageInscription" prefHeight="53.0" prefWidth="106.0" text="S'inscrire">
+                           <font>
+                              <Font name="Perpetua" size="18.0" />
+                           </font></Button>
+
+                        <ImageView fx:id="logout" fitHeight="35.0" fitWidth="30.0" layoutX="1489.0" layoutY="44.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/logout.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="user" fitHeight="35.0" fitWidth="35.0" layoutX="1331.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/user.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="shopping_cart" fitHeight="35.0" fitWidth="35.0" layoutX="1266.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/shopping_basket.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="home" fitHeight="35.0" fitWidth="35.0" layoutX="1206.0" layoutY="42.0" onMouseClicked="#backHome" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/home.png" />
+                           </image>
+                        </ImageView>
+                        <Text fx:id="userName" fill="WHITE" layoutX="1366.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="128.00000000000023">
+                           <font>
+                              <Font name="Perpetua" size="18.0" />
+                           </font></Text>
+                        <Text fx:id="nbLocation" fill="WHITE" layoutX="1300.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="16.9921875">
+                           <font>
+                              <Font name="Perpetua" size="18.0" />
+                           </font></Text>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+            <ScrollPane fx:id="scrollPane" prefHeight="750.0" prefWidth="1525.0">
+               <content>
+                  <FlowPane fx:id="flowPane" prefWidth="1523.0">
+                     <children>
+                        <HBox fx:id="hboxPane2" prefHeight="442.0" prefWidth="1536.0">
+                           <children>
+                              <Pane fx:id="pane2" prefHeight="119.0" prefWidth="1536.0">
+                                 <children>
+                                    <ImageView fx:id="image" fitHeight="216.0" fitWidth="258.0" layoutX="346.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/default-image.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Text fx:id="titre" fill="#1f6580" layoutX="694.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titre">
+                                       <font>
+                                          <Font name="Perpetua" size="48.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#1f6580" layoutX="880.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
+                                       <font>
+                                          <Font name="Perpetua" size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="lieu" fill="#1f6580" layoutX="780.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                                       <font>
+                                          <Font name="Perpetua" size="20.0" />
+                                       </font>
+                                    </Text>
+
+                                    <Text fx:id="prix" fill="#1f6580" layoutX="780.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix">
+                                       <font>
+                                          <Font name="Perpetua" size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="hote" fill="#1f6580" layoutX="780.0" layoutY="421.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                                       <font>
+                                          <Font name="Perpetua" size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <Button fx:id="boutonAjoutPanier" layoutX="780.0" layoutY="344.0" mnemonicParsing="false" onMouseClicked="#addToCart" prefHeight="53.0" prefWidth="150.0" text="Ajouter au panier">
+                                       <font>
+                                          <Font name="Perpetua" size="18.0" />
+                                       </font></Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </HBox>
+                        <VBox fx:id="vboxPane2" alignment="CENTER" prefWidth="1536.0" spacing="20.0">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <Pane fx:id="pane3" prefWidth="1536.0">
+                                 <children>
+                                    <TextArea fx:id="addCommentaire" layoutX="156.0" layoutY="14.0" prefHeight="117.0" prefWidth="341.0">
+                                       <font>
+                                          <Font name="Perpetua" size="18.0" />
+                                       </font></TextArea>
+                                    <VBox fx:id="comments" layoutX="831.0" layoutY="45.0" prefWidth="464.0" />
+
+                                    <Button fx:id="ajouterCommentaire" layoutX="243.0" layoutY="143.0" mnemonicParsing="false" onAction="#addComment" prefHeight="50.0" prefWidth="148.0" text="Ajouter votre avis">
+                                       <font>
+                                          <Font name="Perpetua" size="18.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                           </children>
+
+                        </VBox>
+                     </children>
+                  </FlowPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</Pane>

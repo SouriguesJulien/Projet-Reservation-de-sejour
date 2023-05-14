@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="mainPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1536.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetreservationsejours.controlleur.MainController">
+   <children>
+      <VBox fx:id="vboxPane" prefHeight="790.0" prefWidth="1536.0">
+         <children>
+            <HBox prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <Pane fx:id="headerPane" prefHeight="150.0" prefWidth="1536.0">
+                     <children>
+                        <Button fx:id="boutonConnexion" layoutX="124.0" layoutY="21.0" mnemonicParsing="false" onAction="#showPageConnexion" prefHeight="53.0" prefWidth="128.0" text="Se connecter">
+                           <font>
+                              <Font name="Perpetua" size="18.0" />
+                           </font></Button>
+                        <Button fx:id="bountonInscription" layoutX="293.0" layoutY="21.0" mnemonicParsing="false" onAction="#showPageInscription" prefHeight="53.0" prefWidth="106.0" text="S'inscrire">
+                           <font>
+                              <Font name="Perpetua" size="18.0" />
+                           </font></Button>
+
+                        <ImageView fx:id="logout" fitHeight="35.0" fitWidth="30.0" layoutX="1188.0" layoutY="43.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/logout.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="user" fitHeight="35.0" fitWidth="35.0" layoutX="1000.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/user.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="shopping_cart" fitHeight="35.0" fitWidth="35.0" layoutX="929.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/shopping_basket.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="home" fitHeight="35.0" fitWidth="35.0" layoutX="839.0" layoutY="42.0" onMouseClicked="#backHome" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/home.png" />
+                           </image>
+                        </ImageView>
+                        <Text fx:id="userName" fill="WHITE" layoutX="1042.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="elodie13" wrappingWidth="128.00000000000023">
+                           <font>
+                              <Font name="Perpetua" size="18.0" />
+                           </font></Text>
+                        <Text fx:id="nbLocation" fill="WHITE" layoutX="1300.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="16.9921875">
+                           <font>
+                              <Font name="Perpetua" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+            <ScrollPane fx:id="scrollPane" prefHeight="750.0" prefWidth="1525.0">
+               <content>
+                  <FlowPane fx:id="flowPane" minHeight="-Infinity" prefWidth="1523.0">
+                     <children>
+                        <HBox fx:id="hboxPane" prefHeight="170.0" prefWidth="1536.0">
+                           <children>
+                              <Pane fx:id="researchPane" prefHeight="119.0" prefWidth="1520.0">
+                                 <children>
+                                    <TextField fx:id="searchTextField" layoutX="112.0" layoutY="42.0" prefHeight="40.0" prefWidth="167.0" promptText="Recherche" style="-fx-background-image: url('https://cdn-icons-png.flaticon.com/512/5219/5219383.png'); -fx-background-repeat: no-repeat; -fx-background-position: right center; -fx-background-size: 20px 20px;">
+                                       <font>
+                                          <Font name="Perpetua" size="18.0" />
+                                       </font></TextField>
+                                    <DatePicker fx:id="dateDebut" layoutX="381.0" layoutY="42.0" prefHeight="40.0" prefWidth="188.0" promptText="Arrivée" stylesheets="@CSS/Test.css" />
+                                    <DatePicker fx:id="dateFin" layoutX="610.0" layoutY="42.0" prefHeight="40.0" prefWidth="178.0" promptText="Départ" stylesheets="@CSS/Test.css" />
+                                    <Button fx:id="boutonRecherche" layoutX="866.0" layoutY="45.0" mnemonicParsing="false" onAction="#searchBar" prefHeight="35.0" prefWidth="144.0" text="Rechercher">
+                                       <font>
+                                          <Font name="Perpetua" size="18.0" />
+                                       </font></Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </HBox>
+                        <VBox fx:id="container" alignment="CENTER" prefWidth="1520.0" spacing="20.0">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <VBox fx:id="cardContainer" prefHeight="50.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </FlowPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets right="40.0" />
+   </padding>
+</Pane>

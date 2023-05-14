@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="520.0" prefWidth="1000.0" style="-fx-border-insets: 10,10,10,10; -fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetreservationsejours.controlleur.HostCardTemplateControlleur">
+   <Pane fx:id="pane" layoutX="79.0" layoutY="11.0" prefHeight="402.0" prefWidth="826.0" style="-fx-background-color: #F9F7F5; -fx-border-color: #534362; -fx-border-width: 3; -fx-border-radius: 30; -fx-background-radius: 30;">
+      <children>
+         <ImageView fx:id="image" fitHeight="400.0" fitWidth="400.0" layoutX="17.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/default-image.png" />
+            </image>
+         </ImageView>
+         <Text fx:id="titre" fill="#1f6580" layoutX="458.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titre">
+            <font>
+               <Font name="Perpetua" size="36.0" />
+            </font>
+         </Text>
+         <Text fx:id="dateDebut" fill="#1f6580" layoutX="501.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="XX/XX/XXXX">
+            <font>
+               <Font name="Perpetua" size="16.0" />
+            </font>
+         </Text>
+         <Text fill="#1f6580" layoutX="577.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
+            <font>
+               <Font name="Perpetua" size="16.0" />
+            </font>
+         </Text>
+         <Text fx:id="dateFin" fill="#1f6580" layoutX="584.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="XX/XX/XXXX">
+            <font>
+               <Font name="Perpetua" size="16.0" />
+            </font>
+         </Text>
+         <Text fx:id="lieu" fill="#1f6580" layoutX="501.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lieu">
+            <font>
+               <Font name="Perpetua" size="16.0" />
+            </font>
+         </Text>
+
+         <Text fx:id="prix" fill="#1f6580" layoutX="501.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix">
+            <font>
+               <Font name="Perpetua" size="16.0" />
+            </font>
+         </Text>
+         <Text fx:id="hote" fill="#1f6580" layoutX="501.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hôte">
+            <font>
+               <Font name="Perpetua" size="16.0" />
+            </font>
+         </Text>
+         <ImageView fx:id="delete" fitHeight="28.0" fitWidth="28.0" layoutX="775.0" layoutY="22.0" onMouseClicked="#eraseChoice" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/wrong-red.png" />
+            </image>
+         </ImageView>
+         <ImageView fx:id="approuve" fitHeight="28.0" fitWidth="28.0" layoutX="738.0" layoutY="24.0" onMouseClicked="#eraseChoice" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/right-green.png" />
+            </image>
+         </ImageView>
+         <Text fx:id="locateur" fill="#1f6580" layoutX="664.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Locateur">
+            <font>
+               <Font name="Perpetua" size="16.0" />
+            </font>
+         </Text>
+      </children>
+   </Pane>
+
+</AnchorPane>

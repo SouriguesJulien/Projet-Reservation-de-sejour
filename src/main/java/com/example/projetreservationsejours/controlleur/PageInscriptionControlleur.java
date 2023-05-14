@@ -39,8 +39,7 @@ public class PageInscriptionControlleur extends Preloader implements Initializab
     @FXML
     private CheckBox checkboxVoyageur;
 
-    @FXML
-    private CheckBox chekboxTermesEtConditions;
+
 
     @FXML
     private TextField email;
@@ -78,11 +77,6 @@ public class PageInscriptionControlleur extends Preloader implements Initializab
     private Text erreurCheckboxTermes;
 
     private User user = new User();
-
-    public void setButton(Button button) {
-            button.setBackground(new Background(new BackgroundFill(Color.WHEAT, null, null)));
-            button.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-    }
 
     @FXML
     void checkHote(ActionEvent event) {
@@ -140,13 +134,10 @@ public class PageInscriptionControlleur extends Preloader implements Initializab
         isValid = verifyTextFieldEmpty(motDePasse,erreurPassword,"Le mot de passe",isValid);
 
         if(!checkboxVoyageur.isSelected() && !checkboxHote.isSelected()){
-            erreurCheckbox.setText("Veuillez choisir un mode");
+            erreurCheckbox.setText("Cochez la case de votre coix s'il vous plait");
             isValid = false;
         }
-        if(!chekboxTermesEtConditions.isSelected()){
-            erreurCheckboxTermes.setText("Veuillez accepter les termes et conditions");
-            isValid = false;
-        }
+
         if(isValid){
             for(int i=0; i<application.allUsers.getUsers().size() && isValid; i++){
                if(application.allUsers.getUsers().get(i).getUsername().equals(nomUtilisateur.getText()) || application.allUsers.getUsers().get(i).getEmail().equals(email.getText())){
@@ -166,9 +157,8 @@ public class PageInscriptionControlleur extends Preloader implements Initializab
             user.setHote(checkboxHote.isSelected());
             application.allUsers.addNewUserToCsv("utilisateurs.csv",user);
             application.allUsers.loadData("utilisateurs.csv");
-            application.FenetreControlleur.showNotification("Connexion","Votre inscription a été validé",2000,"images/Right.png");
             application.userConnected = application.allUsers.findUserByUsernameAndPassword(user.getUsername(),user.getPassword());
-            application.FenetreControlleur.changerDeFenetre("Accueil.fxml");
+            application.fenetreControlleur.changerDeFenetre("Accueil.fxml");
             System.out.println("Inscription" + application.userConnected.toString());
             Stage stage = (Stage) pageInscriptionStage.getScene().getWindow();
             stage.close();
@@ -183,6 +173,12 @@ public class PageInscriptionControlleur extends Preloader implements Initializab
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        prenom.setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #D3D3D3");
+        nom.setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #D3D3D3");
+        nomUtilisateur.setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #D3D3D3");
+        email.setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #D3D3D3");
+        motDePasse.setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #D3D3D3");
+        pageInscriptionStage.setStyle("-fx-background-color: #FFFFFF;");
+        boutonInscrire.setStyle("-fx-background-color: #1f6580; -fx-text-fill:#FFFFFF; -fx-border-radius: 30;-fx-background-radius: 30;-fx-border-color: #FFFFFF; -fx-arc-width: 30");
     }
 }

@@ -89,22 +89,21 @@ public class PageConnexionControlleur extends Preloader implements Initializable
         isValid = verifyTextFieldEmpty(motDePasse,erreurPassword,"Le mot de passe",isValid);
 
         if(!checkboxVoyageur.isSelected() && !checkboxHote.isSelected()){
-            erreurCheckbox.setText("Veuillez choisir un mode");
+            erreurCheckbox.setText("Cochez la case de votre coix s'il vous plait");
             isValid = false;
         }
         if(isValid){
             for(int i=0; i<application.allUsers.getUsers().size() && !found; i++){
                 if(application.allUsers.getUsers().get(i).getUsername().equals(nomUtilisateur.getText()) && application.allUsers.getUsers().get(i).getPassword().equals(motDePasse.getText())){
                     found=true;
-                    application.FenetreControlleur.showNotification("Connexion","Vous êtes désormais connecté",2000,"images/Right.png");
                     application.userConnected = application.allUsers.findUserByUsernameAndPassword(nomUtilisateur.getText(), motDePasse.getText());
-                    application.FenetreControlleur.changerDeFenetre("Accueil.fxml");
+                    application.fenetreControlleur.changerDeFenetre("Accueil.fxml");
                     Stage stage = (Stage) pageConnexionStage.getScene().getWindow();
                     stage.close();
                 }
             }
             if(!found) {
-                erreurConnexion.setText("Les identifiants sont incorrectes");
+                erreurConnexion.setText("Identifiant ou mot de passe incorrectes");
             }
         }
     }
@@ -115,6 +114,9 @@ public class PageConnexionControlleur extends Preloader implements Initializable
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        nomUtilisateur.setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #D3D3D3");
+        motDePasse.setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #D3D3D3");
+        pageConnexionStage.setStyle("-fx-background-color: #FFFFFF;");
+        boutonConnexion.setStyle("-fx-background-color: #1f6580; -fx-text-fill:#FFFFFF; -fx-border-radius: 30;-fx-background-radius: 30;-fx-border-color: #FFFFFF; -fx-arc-width: 30");
     }
 }

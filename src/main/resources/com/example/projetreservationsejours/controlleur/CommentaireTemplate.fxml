@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="111.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetreservationsejours.controlleur.CommentaireTemplateControlleur">
+   <Pane layoutX="87.0" layoutY="10.0" prefHeight="92.0" prefWidth="281.0">
+      <children>
+            <Label fx:id="username" layoutX="14.0" layoutY="14.0" prefHeight="23.0" prefWidth="185.0" text="Non d'utilisateur" textFill="#1f6580" underline="true">
+            <font>
+               <Font name="Perpetua" size="18.0" />
+            </font></Label>
+         <Text fill="#1f6580" layoutX="200.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0">
+            <font>
+               <Font name="Perpetua" size="18.0" />
+            </font>
+         </Text>
+         <Text fx:id="note" fill="#1f6580" layoutX="246.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0/5">
+            <font>
+               <Font name="Perpetua" size="18.0" />
+            </font>
+         </Text>
+         <Text fx:id="commentaire" fill="#1f6580" layoutX="14.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avis">
+            <font>
+               <Font name="Perpetua" size="14.0" />
+            </font>
+         </Text>
+      </children>
+   </Pane>
+
+</AnchorPane>
